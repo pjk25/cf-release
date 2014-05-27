@@ -121,6 +121,15 @@ properties:
     stacks: ~
 
   login:
+    spring_profiles: ldap
+    ldap:
+      profile_type: search-and-bind
+      url: 'ldap://192.168.50.4:389/'
+      userDN: 'cn=admin,ou=Users,dc=test,dc=com'
+      userPassword: 'adminsecret'
+      searchBase: 'dc=test,dc=com'
+      searchFilter: 'cn={0}'
+
     analytics:
       code: ~
       domain: ~
