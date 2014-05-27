@@ -147,6 +147,36 @@ properties:
     tiles: ~
 
   uaa:
+    spring_profiles: ldap,default,postgresql
+    ldap:
+      profile_type: search-and-bind
+      url: 'ldap://192.168.50.4:389'
+      userDN: 'cn=admin,ou=Users,dc=test,dc=com'
+      userPassword: 'adminsecret'
+      searchBase: 'dc=test,dc=com'
+      searchFilter: 'cn={0}'
+      ssl: 
+        sslCertificate: 
+          -----BEGIN CERTIFICATE-----
+          MIIC/TCCAbWgAwIBAgIEU3LZnzANBgkqhkiG9w0BAQsFADAgMR4wHAYDVQQDExVQ
+          aXZvdGFsIFNvZnR3YXJlIFRlc3QwHhcNMTQwNTE0MDI0OTAzWhcNMjQwNTExMDI0
+          OTAzWjA9MR4wHAYDVQQKExVQaXZvdGFsIFNvZnR3YXJlIFRlc3QxGzAZBgNVBAMT
+          EmxkYXAwMS5leGFtcGxlLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA
+          7r4fPm9KWrx7bJDPR9iC9SWIAIcgKvo6x8qe/27heZMdDgBHhmMstELz05oRt/TX
+          u0HlDl99P+C2RGXRYNQCIQ07F9rCZ+psipSEKdX7ATzrN09A2kRh0X1i6O/I4h1D
+          0ibtmsEHJifTxafCXJzhIO35V+jRYk0GC/8EUW1T6I0CAwEAAaN2MHQwDAYDVR0T
+          AQH/BAIwADATBgNVHSUEDDAKBggrBgEFBQcDATAPBgNVHQ8BAf8EBQMDB6AAMB0G
+          A1UdDgQWBBRZVm0SY1uEXEKSGkNlc70b0Gla2TAfBgNVHSMEGDAWgBTt6ci5zWH4
+          M/8+3SrpnQSzhECNXDANBgkqhkiG9w0BAQsFAAOCATEAuGBnbvugOOuKLnkHvKE/
+          GslZ1JZZakWQhD3dNMfxXtBC972iXvMCcWDhRPqgrEmmLIKn3rGHQVGSUIQj6s2d
+          NI461L1alXfqxgBZ5JCgqA7OZLJXXZ7W2UkdzMq0yMwaxOSbRs9I9dY3/gT+QZ6w
+          YESW5EqcBMFTuiAnbdN/OWKFTo/DcN7DaTK329ODVDErDvMcevz7cE1+aeIxdujl
+          6erw2sELyYxiZUA2VqLlcHGAFUPEU5GZaGJCxpQb+MVCPcBv/ZCN5XSP/xaVcGXG
+          cf/3IGlTpYmdk/oG8Y4fyBD1J74Y1OcwFlCyG4NC2tJ1gMgQd/jeibVFc0PtGDL5
+          YozuqanaB2jdPznl/y+XQAN5zg7gseaQZuPfSpUxtiZcj4LZ9VFb2ximtLMJ7mvH
+          nQ==
+          -----END CERTIFICATE-----
+
     catalina_opts: (( merge ))
 
     url: (( "https://uaa." domain ))
