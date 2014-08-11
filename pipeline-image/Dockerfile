@@ -1,12 +1,8 @@
 FROM ubuntu:trusty
 
-RUN apt-get update
-
-RUN apt-get -y install libxml2-dev libxslt-dev libreadline-dev python-software-properties git
-
-RUN apt-get -y install libmysqlclient-dev libpq-dev libsqlite3-dev
-
-RUN apt-get -y install build-essential zlib1g-dev libssl-dev libyaml-dev curl wget
+RUN apt-get update && apt-get -y install libxml2-dev libxslt-dev libreadline-dev python-software-properties git
+RUN apt-get update && apt-get -y install libmysqlclient-dev libpq-dev libsqlite3-dev
+RUN apt-get update && apt-get -y install build-essential zlib1g-dev libssl-dev libyaml-dev curl wget
 
 RUN git clone https://github.com/postmodern/chruby /tmp/chruby
 RUN cd /tmp/chruby && git reset --hard 310bd34d1fcbb3365814c85018114123cef5a41f
